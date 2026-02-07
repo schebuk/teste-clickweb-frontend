@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import Features from './components/Features/Features';
+import Footer from './components/Footer/Footer';
+import Loading from './components/Loading/Loading';
+import BrowsingPetsPage from './pages/BrowsingPetsPage/BrowsingPetsPage';
 import './App.css';
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <Features />
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 1500);
+  }, []);
+
+  if (isLoading) return <Loading />;
+
+  return (
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/pets-namorando" element={<BrowsingPetsPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

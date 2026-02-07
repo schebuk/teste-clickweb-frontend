@@ -1,0 +1,220 @@
+.browsingPetsPage {
+  background: #f5f5f0;
+  min-height: calc(100vh - 200px);
+  padding: 4rem 2rem;
+  padding-top: calc(80px + 4rem);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  color: #f4c430;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* DESKTOP ORIGINAL - 3 por linha, 6 em 6 */
+.petGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.petPair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+}
+
+.petCircle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.petImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.petName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin: 0.5rem 0 0 0;
+}
+
+.heartConnector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 -25px;
+  z-index: 2;
+}
+
+.heartImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  position: relative;
+  top: -25px;
+}
+
+/* Publicidade - 750x100 */
+.advertisement {
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem auto 3rem;
+  padding: 0;
+  width: 750px;
+  height: 100px;
+  max-width: 100%;
+}
+
+.adPlaceholder {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Botão Carregar mais */
+.loadMoreBtn {
+  background: #f4c430;
+  color: #2d2d2d;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 3rem auto 0;
+  box-shadow: 0 4px 12px rgba(244, 196, 48, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.loadMoreBtn:hover:not(:disabled) {
+  background: #e5b520;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 196, 48, 0.4);
+}
+
+.loadMoreBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVO - MOBILE (768px) */
+@media (max-width: 768px) {
+  .browsingPetsPage {
+    padding: 3rem 1rem;
+    padding-top: calc(80px + 3rem);
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  /* MOBILE: 2 por linha, 4 em 4, imagens maiores */
+  .petGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 por linha no mobile */
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* IMAGENS MAIORES NO MOBILE */
+  .petImage {
+    width: 140px; /* Maior no mobile */
+    height: 140px;
+  }
+  
+  .heartConnector {
+    margin: 0 -15px;
+  }
+  
+  .heartImage {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+  }
+  
+  .petName {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .advertisement {
+    width: 100%;
+    height: 60px;
+    margin: 2rem auto 2.5rem;
+  }
+  
+  .loadMoreBtn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    margin: 2rem auto 0;
+  }
+}
+
+/* RESPONSIVO - MOBILE PEQUENO (480px) */
+@media (max-width: 480px) {
+  .petGrid {
+    grid-template-columns: 1fr; /* 1 por linha em telas muito pequenas */
+    gap: 1rem;
+  }
+  
+  .petImage {
+    width: 160px; /* Ainda maior em 1 por linha */
+    height: 160px;
+  }
+  
+  .heartConnector {
+    margin: 0 -20px;
+  }
+  
+  .heartImage {
+    width: 45px;
+    height: 45px;
+    top: -22px;
+  }
+  
+  .petName {
+    font-size: 1rem;
+  }
+  
+  .advertisement {
+    height: 50px;
+  }
+}
