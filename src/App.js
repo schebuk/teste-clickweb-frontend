@@ -5,7 +5,7 @@ import Hero from './components/Hero/Hero';
 import Features from './components/Features/Features';
 import Footer from './components/Footer/Footer';
 import Loading from './components/Loading/Loading';
-import BrowsingPetsPage from './pages/BrowsingPetsPage/BrowsingPetsPage';
+import BrowsingPetsPage from './pages/BrowsingPetsPage/BrowsingPetsPage.js';
 import './App.css';
 
 function HomePage() {
