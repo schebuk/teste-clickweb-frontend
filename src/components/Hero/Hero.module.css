@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 2rem 4rem;
+  padding: calc(80px + 4rem) 2rem 4rem ;
   text-align: center;
 }
 
